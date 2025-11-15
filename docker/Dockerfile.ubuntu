@@ -1,0 +1,32 @@
+FROM ubuntu:22.04
+
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install sudo and basic utilities
+RUN apt-get update && \
+    apt-get install -y \
+    sudo \
+    curl \
+    wget \
+    git \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user 'testuser' with sudo privileges and password 'test'
+RUN useradd -m -s /bin/bash testuser && \
+    echo "testuser:test" | chpasswd && \
+    echo "testuser ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
+# Switch to the testuser
+USER testuser
+WORKDIR /home/testuser
+
+# The project will be mounted at /workspace
+VOLUME /workspace
+
+# Set the working directory to the mounted volume
+WORKDIR /workspace
+
+# Default command opens a bash shell
+CMD ["/bin/bash"]
