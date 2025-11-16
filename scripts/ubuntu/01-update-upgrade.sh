@@ -19,6 +19,11 @@ echo "========================================"
 echo "Updating package lists..."
 sudo apt update
 
+# Enable universe repository (required for many packages)
+echo "Enabling universe repository..."
+sudo add-apt-repository universe -y
+sudo apt update
+
 # Upgrade all packages without prompts
 echo "Upgrading installed packages..."
 sudo apt upgrade -y

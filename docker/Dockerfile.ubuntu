@@ -11,6 +11,7 @@ RUN apt-get update && \
     wget \
     git \
     ca-certificates \
+    software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user 'testuser' with sudo privileges and password 'test'
