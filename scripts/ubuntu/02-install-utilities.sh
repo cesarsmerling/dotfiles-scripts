@@ -17,7 +17,7 @@ echo "========================================"
 # Array of packages to install (one per line for readability)
 PACKAGES=(
     ffmpeg
-    7zip
+    p7zip-full
     jq
     poppler-utils
     fd-find
