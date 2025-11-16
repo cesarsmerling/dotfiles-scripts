@@ -46,7 +46,7 @@ Run kitty and execute inside
 kitten theme
 ```
 
-Inside select Catpuccin Mocha as theme, and crete a new config file
+Inside select Catpuccin Mocha, Everforest or Afterglow as theme, and create a new config file
 
 Then copy the content for this config file
 
