@@ -10,17 +10,26 @@
 
 set -e  # Exit on error
 
+# Color codes for output
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "========================================"
-echo "Ubuntu/Pop_OS Setup Script"
-echo "========================================"
+echo -e "${BLUE}============================================${NC}"
+echo -e "${BLUE}     Ubuntu/Pop_OS Setup Script${NC}"
+echo -e "${BLUE}============================================${NC}"
 echo ""
 
 # Request sudo privileges upfront
-echo "Requesting sudo privileges..."
+echo -e "${YELLOW}Requesting sudo privileges...${NC}"
 sudo -v
+echo -e "${GREEN}✓ Sudo privileges granted${NC}"
+echo ""
 
 # Keep sudo alive: update existing sudo time stamp until the script finishes
 # This runs in the background and updates sudo every 60 seconds
@@ -30,7 +39,7 @@ while true; do
     kill -0 "$$" || exit
 done 2>/dev/null &
 
-echo "Starting installation scripts..."
+echo -e "${BLUE}Starting installation scripts...${NC}"
 echo ""
 
 ###############################################################################
@@ -39,22 +48,40 @@ echo ""
 
 # 01 - System Update and Upgrade
 if [ -f "$SCRIPT_DIR/01-update-upgrade.sh" ]; then
-    echo "Running: 01-update-upgrade.sh"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 01-update-upgrade.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     bash "$SCRIPT_DIR/01-update-upgrade.sh"
     echo ""
 else
-    echo "Warning: 01-update-upgrade.sh not found, skipping..."
+    echo -e "${RED}Warning: 01-update-upgrade.sh not found, skipping...${NC}"
     echo ""
 fi
 
-# Add more scripts here as they are created
-# Example:
-# if [ -f "$SCRIPT_DIR/02-utilities.sh" ]; then
-#     echo "Running: 02-utilities.sh"
-#     bash "$SCRIPT_DIR/02-utilities.sh"
-#     echo ""
-# fi
+# 02 - Install Utilities
+if [ -f "$SCRIPT_DIR/02-install-utilities.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 02-install-utilities.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/02-install-utilities.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 02-install-utilities.sh not found, skipping...${NC}"
+    echo ""
+fi
 
-echo "========================================"
-echo "All installation scripts completed!"
-echo "========================================"
+# 03 - Install Fonts
+if [ -f "$SCRIPT_DIR/03-install-fonts.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 03-install-fonts.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/03-install-fonts.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 03-install-fonts.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+echo -e "${GREEN}============================================${NC}"
+echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
+echo -e "${GREEN}============================================${NC}"
