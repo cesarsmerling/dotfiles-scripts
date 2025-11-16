@@ -38,3 +38,18 @@ This repository serves as a personal reference for setting up a consistent devel
 - Maintain separation between different tool categories (terminal, shell, development tools, etc.)
 - under the folder scripts we will have the scripts in bash. We will separate each command or each application mentioned in the linux-install-notion as a separated script file with comments for reference. There will be two types of scripts under the corresponding folder 'ubuntu' for apt installation (ubuntu) and 'arch' for Arch linux system. Then will be a main script files that run everything. You will guide me to create this files and then document the test cases and errors
 - dont run the docker environment, let me test it by my self manually
+- all scripts shoel create variables to be more readeble
+- all scripts should use color for messges
+# Color codes for output
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+like 03 script
+- this is the color scheme reference
+ - BLUE (🔵): Headers, titles, and section separators
+  - YELLOW (🟡): Progress messages and current step indicators
+  - GREEN (🟢): Success messages with ✓ checkmarks
+  - RED (🔴): Warning/error messages (for missing files)
+  - NC: Reset to no color
