@@ -53,3 +53,6 @@ like 03 script
   - GREEN (🟢): Success messages with ✓ checkmarks
   - RED (🔴): Warning/error messages (for missing files)
   - NC: Reset to no color
+- When you have to copy or check the files from the repo in the scripts use this variable:
+ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+that creates from the scripts directory the path to the repo. Dont use $HOME
