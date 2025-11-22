@@ -3,7 +3,7 @@
 ###############################################################################
 # Arch Linux Utilities Installation Script
 ###############################################################################
-# Description: Installs essential utilities and command-line tools
+# Description: Installs base-devel and essential utilities/command-line tools
 # Reference: linux-install-notion.md - Line 17-21 (adapted for Arch Linux)
 # Usage: ./02-install-utilities.sh
 ###############################################################################
@@ -24,10 +24,12 @@ echo ""
 
 # Array of packages to install (one per line for readability)
 # Package name differences from Ubuntu:
+#   - build-essential -> base-devel
 #   - 7zip -> p7zip
 #   - poppler-utils -> poppler
 #   - fd-find -> fd
 PACKAGES=(
+    base-devel
     ffmpeg
     p7zip
     jq

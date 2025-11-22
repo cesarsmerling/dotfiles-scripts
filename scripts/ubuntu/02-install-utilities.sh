@@ -3,7 +3,7 @@
 ###############################################################################
 # Ubuntu/Pop_OS Utilities Installation Script
 ###############################################################################
-# Description: Installs essential utilities and command-line tools
+# Description: Installs build-essential and essential utilities/command-line tools
 # Reference: linux-install-notion.md - Line 17-21
 # Usage: ./02-install-utilities.sh
 ###############################################################################
@@ -24,6 +24,7 @@ echo ""
 
 # Array of packages to install (one per line for readability)
 PACKAGES=(
+    build-essential
     ffmpeg
     p7zip-full
     jq
