@@ -130,6 +130,30 @@ else
     echo ""
 fi
 
+# 08 - Install Cargo (Rust)
+if [ -f "$SCRIPT_DIR/08-install-cargo.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 08-install-cargo.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/08-install-cargo.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 08-install-cargo.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 09 - Install Exa
+if [ -f "$SCRIPT_DIR/09-install-exa.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 09-install-exa.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/09-install-exa.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 09-install-exa.sh not found, skipping...${NC}"
+    echo ""
+fi
+
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
 echo -e "${GREEN}============================================${NC}"
