@@ -82,6 +82,54 @@ else
     echo ""
 fi
 
+# 04 - Install Kitty Terminal
+if [ -f "$SCRIPT_DIR/04-install-kitty.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 04-install-kitty.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/04-install-kitty.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 04-install-kitty.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 05 - Install Zsh
+if [ -f "$SCRIPT_DIR/05-install-zsh.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 05-install-zsh.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/05-install-zsh.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 05-install-zsh.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 06 - Install Oh My Zsh
+if [ -f "$SCRIPT_DIR/06-install-oh-my-zsh.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 06-install-oh-my-zsh.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/06-install-oh-my-zsh.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 06-install-oh-my-zsh.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 07 - Install Starship
+if [ -f "$SCRIPT_DIR/07-install-starship.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 07-install-starship.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/07-install-starship.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 07-install-starship.sh not found, skipping...${NC}"
+    echo ""
+fi
+
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
 echo -e "${GREEN}============================================${NC}"
