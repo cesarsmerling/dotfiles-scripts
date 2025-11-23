@@ -305,6 +305,12 @@ git config --global user.email "tu-email@ejemplo.com"
 
 ## Neovim / Lazyvim
 
+- Install
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/local/bin/nvim
+
 - Make a backup of your current Neovim files:
     
     ```

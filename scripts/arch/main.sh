@@ -154,6 +154,42 @@ else
     echo ""
 fi
 
+# 10 - Install Yazi
+if [ -f "$SCRIPT_DIR/10-install-yazi.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 10-install-yazi.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/10-install-yazi.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 10-install-yazi.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 11 - Install LazyGit
+if [ -f "$SCRIPT_DIR/11-install-lazygit.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 11-install-lazygit.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/11-install-lazygit.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 11-install-lazygit.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 12 - Install Neovim
+if [ -f "$SCRIPT_DIR/12-install-neovim.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 12-install-neovim.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/12-install-neovim.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 12-install-neovim.sh not found, skipping...${NC}"
+    echo ""
+fi
+
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
 echo -e "${GREEN}============================================${NC}"

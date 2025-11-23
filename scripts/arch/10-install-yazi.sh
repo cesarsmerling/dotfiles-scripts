@@ -27,6 +27,11 @@ YAZI_CONFIG_DIR="$CONFIG_DIR/yazi"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 DOTFILES_YAZI="$REPO_DIR/dotfiles/yazi"
 
+# Source cargo environment if it exists
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
+
 echo -e "${BLUE}============================================${NC}"
 echo -e "${BLUE}  Yazi Installation Script${NC}"
 echo -e "${BLUE}============================================${NC}"

@@ -22,6 +22,11 @@ NC='\033[0m' # No Color
 CARGO_BIN="$HOME/.cargo/bin/cargo"
 EXA_BIN="$HOME/.cargo/bin/exa"
 
+# Source cargo environment if it exists
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
+
 echo -e "${BLUE}============================================${NC}"
 echo -e "${BLUE}  Exa Installation Script${NC}"
 echo -e "${BLUE}============================================${NC}"
