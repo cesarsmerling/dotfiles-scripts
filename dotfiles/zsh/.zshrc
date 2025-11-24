@@ -103,6 +103,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # Set up fzf key bindings and fuzzy completion
 # eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#eval "$(fzf --zsh)"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
@@ -121,16 +122,32 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 # Enable right alt key to be Compose key, for ñ and áéíóú
 setxkbmap -option compose:ralt
 
+
 #fzf-git
-source ~/scripts/fzf-git.sh/fzf-git.sh
+source ~/.config/fzf-git/fzf-git.sh
 
 # Auto-authenticate sudo on terminal start (only if not already cached)
 if [ -t 0 ]; then
    sudo -n true 2>/dev/null || sudo -v
-fi
+fi 
+
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+
+# Setup fzf previews
+export FZF_CTRL_T_OPTS="--preview 'batcat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'exa --icons=always --tree --color=always {} | head -200'"
+
+# fzf preview for tmux
+export FZF_TMUX_OPTS=" -p90%,70% "  
 
 # For a full list of active aliases, run `alias`.
 alias confsh="nvim ~/.zshrc"
