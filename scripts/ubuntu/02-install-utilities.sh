@@ -27,6 +27,7 @@ echo ""
 
 # Array of packages to install (one per line for readability)
 PACKAGES=(
+    curl
     build-essential
     ffmpeg
     p7zip-full
