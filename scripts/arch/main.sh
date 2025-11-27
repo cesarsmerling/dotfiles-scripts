@@ -190,6 +190,66 @@ else
     echo ""
 fi
 
+# 13 - Install VSCode
+if [ -f "$SCRIPT_DIR/13-install-vscode.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 13-install-vscode.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/13-install-vscode.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 13-install-vscode.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 14 - Install Brave Browser
+if [ -f "$SCRIPT_DIR/14-install-brave.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 14-install-brave.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/14-install-brave.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 14-install-brave.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 15 - Install Docker
+if [ -f "$SCRIPT_DIR/15-install-docker.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 15-install-docker.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/15-install-docker.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 15-install-docker.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 16 - Install FNM and Node.js
+if [ -f "$SCRIPT_DIR/16-install-fnm-node.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 16-install-fnm-node.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/16-install-fnm-node.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 16-install-fnm-node.sh not found, skipping...${NC}"
+    echo ""
+fi
+
+# 17 - Install Go
+if [ -f "$SCRIPT_DIR/17-install-go.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 17-install-go.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/17-install-go.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 17-install-go.sh not found, skipping...${NC}"
+    echo ""
+fi
+
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
 echo -e "${GREEN}============================================${NC}"
