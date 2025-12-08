@@ -250,6 +250,18 @@ else
     echo ""
 fi
 
+# 18 - Install Claude Code
+if [ -f "$SCRIPT_DIR/18-install-claude-code.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 18-install-claude-code.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/18-install-claude-code.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 18-install-claude-code.sh not found, skipping...${NC}"
+    echo ""
+fi
+
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
 echo -e "${GREEN}============================================${NC}"
