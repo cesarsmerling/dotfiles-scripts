@@ -262,6 +262,18 @@ else
     echo ""
 fi
 
+# 19 - Install tmux
+if [ -f "$SCRIPT_DIR/19-install-tmux.sh" ]; then
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${YELLOW}Running: 19-install-tmux.sh${NC}"
+    echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    bash "$SCRIPT_DIR/19-install-tmux.sh"
+    echo ""
+else
+    echo -e "${RED}Warning: 19-install-tmux.sh not found, skipping...${NC}"
+    echo ""
+fi
+
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN}  ✓ All installation scripts completed!${NC}"
 echo -e "${GREEN}============================================${NC}"
