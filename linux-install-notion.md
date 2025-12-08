@@ -87,7 +87,7 @@ Then
 chsh -s $(which zsh)
 ```
 
-Execute 
+Execute
 
 ```bash
 zsh
@@ -103,7 +103,7 @@ Check where zsh is installed, by default is /usr/bin/zsh
 which zsh
 ```
 
-Add to the .yml file the follwing: 
+Add to the .yml file the follwing:
 
 ```bash
 shell:
@@ -183,7 +183,7 @@ Add to ~/,zshrc file at the end:
 eval "$(starship init zsh)"
 ```
 
-And run 
+And run
 
 ```bash
 source ~/.zshrc
@@ -217,7 +217,7 @@ Install via cargo
 cargo install exa
 ```
 
-Crete an alias in zshrc 
+Crete an alias in zshrc
 
 ```bash
 alias ls='exa -a -l --color=always --icons --group-directories-first'
@@ -307,12 +307,12 @@ git config --global user.email "tu-email@ejemplo.com"
 
 - Install
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+curl -LO <https://github.com/neovim/neovim/releases/latest/download/nvim.appimage>
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 
 - Make a backup of your current Neovim files:
-    
+
     ```
     # required
     mv ~/.config/nvim{,.bak}
@@ -323,22 +323,22 @@ sudo mv nvim.appimage /usr/local/bin/nvim
     mv ~/.cache/nvim{,.bak}
     
     ```
-    
-- 
+
+-
 - Clone the starter
-    
+
     ```
     git clone https://github.com/LazyVim/starter ~/.config/nvim
     
     ```
-    
+
 - Remove the `.git` folder, so you can add it to your own repo later
-    
+
     ```
     rm -rf ~/.config/nvim/.git
     
     ```
-    
+
 - Start Neovim!
 
 ### Custom config
@@ -358,7 +358,7 @@ return {
 
 ## fd-find
 
-Install 
+Install
 
 ```bash
 sudo apt install fd-find
@@ -374,7 +374,7 @@ Now it can be used as fd
 
 (Not used, there is a configuration that can be used with fzf)
 
-https://github.com/Sin-cy/dotfiles/blob/main/zsh/.zshrc
+<https://github.com/Sin-cy/dotfiles/blob/main/zsh/.zshrc>
 
 ```bash
 # NOTE: FZF
@@ -495,3 +495,12 @@ Spanish character on linux en la terminal:
 - **ü** → `Ctrl + Shift + U`, luego `00FC`, luego `Enter`
 - **¿** → `Ctrl + Shift + U`, luego `00BF`, luego `Enter`
 - **¡** → `Ctrl + Shift + U`, luego `00A1`, luego `Enter`
+
+### Installed gnome-tweaks
+
+Tactile
+Space-bar
+Just perfection
+Switcher
+Vitals
+(switcher and just perfection where disabled)
