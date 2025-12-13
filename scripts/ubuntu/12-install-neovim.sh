@@ -158,7 +158,7 @@ for DIR in "${BACKUP_DIRS[@]}"; do
         echo -e "${BLUE}  Backing up: $DIR${NC}"
         if mv "$DIR" "$BACKUP_TARGET"; then
             echo -e "${GREEN}  ✓ Backup created: $BACKUP_TARGET${NC}"
-            ((BACKUP_COUNT++))
+            BACKUP_COUNT=$((BACKUP_COUNT + 1))
         else
             echo -e "${RED}  ✗ Failed to backup: $DIR${NC}"
         fi
@@ -166,7 +166,7 @@ for DIR in "${BACKUP_DIRS[@]}"; do
         echo -e "${BLUE}  Removing symlink: $DIR${NC}"
         rm "$DIR"
         echo -e "${GREEN}  ✓ Symlink removed${NC}"
-        ((BACKUP_COUNT++))
+        BACKUP_COUNT=$((BACKUP_COUNT + 1))
     else
         echo -e "${BLUE}  Skipping (not found): $DIR${NC}"
     fi

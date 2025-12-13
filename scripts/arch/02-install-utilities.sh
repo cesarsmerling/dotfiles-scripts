@@ -34,6 +34,7 @@ echo ""
 #   - x11-xserver-utils -> xorg-setxkbmap
 PACKAGES=(
     curl
+    wget
     base-devel
     ffmpeg
     p7zip

@@ -30,9 +30,16 @@ echo ""
 if command -v cargo &> /dev/null; then
     CARGO_VERSION=$(cargo --version)
     echo -e "${YELLOW}Cargo is already installed: $CARGO_VERSION${NC}"
-    echo -e "${YELLOW}Updating Rust toolchain...${NC}"
-    rustup update
-    echo -e "${GREEN}✓ Rust toolchain updated successfully${NC}"
+
+    # Check if rustup is available before trying to update
+    if command -v rustup &> /dev/null; then
+        echo -e "${YELLOW}Updating Rust toolchain...${NC}"
+        rustup update
+        echo -e "${GREEN}✓ Rust toolchain updated successfully${NC}"
+    else
+        echo -e "${BLUE}Rustup is not installed, skipping update${NC}"
+        echo -e "${BLUE}Cargo is installed but not managed by rustup${NC}"
+    fi
     echo ""
     exit 0
 fi

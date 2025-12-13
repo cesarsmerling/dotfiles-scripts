@@ -124,16 +124,16 @@ esac
 # pnpm end
 
 # Enable right alt key to be Compose key, for ñ and áéíóú
-setxkbmap -option compose:ralt
+# setxkbmap -option compose:ralt
 
 
 #fzf-git
 source ~/.config/fzf-git/fzf-git.sh
 
 # Auto-authenticate sudo on terminal start (only if not already cached)
-if [ -t 0 ]; then
-   sudo -n true 2>/dev/null || sudo -v
-fi 
+# if [ -t 0 ]; then
+#    sudo -n true 2>/dev/null || sudo -v
+# fi 
 
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
@@ -174,3 +174,14 @@ alias glog='git log --oneline --graph --all'
 
 alias restart="sudo shutdown -r now"
 alias shutdown="sudo shutdown -P now"
+
+# fnm
+FNM_PATH="/home/cesar/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# Go (Golang) PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH="$HOME/.local/bin:$PATH"
