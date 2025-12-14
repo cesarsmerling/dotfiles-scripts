@@ -175,6 +175,8 @@ alias glog='git log --oneline --graph --all'
 alias restart="sudo shutdown -r now"
 alias shutdown="sudo shutdown -P now"
 
+alias dots="sh /home/cesar/git/dotfiles-scripts/tmux.sh"
+
 # fnm
 FNM_PATH="/home/cesar/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
