@@ -19,7 +19,7 @@ if [ $? != 0 ]; then
   # Split window horizontally (left-right) with 65-35 split
   # -p 35 means the new pane (right side) gets 35% of the space
   # Left pane (0) = 65%, Right pane (1) = 35%
-  tmux split-window -h -t $SESSION:1 -p 35 -c "$SCRIPT_DIR"
+  # tmux split-window -h -t $SESSION:1 -p 35 -c "$SCRIPT_DIR"
 
   # Send commands to panes
   # Pane 0 (left, larger): nvim
@@ -27,8 +27,8 @@ if [ $? != 0 ]; then
   tmux send-keys -t $SESSION:1.0 'nvim .' C-m
 
   # Small delay to ensure shell is ready before sending claude command
-  sleep 0.5
-  tmux send-keys -t $SESSION:1.1 'claude' C-m
+  # sleep 0.5
+  # tmux send-keys -t $SESSION:1.1 'claude' C-m
 
   # Create second window for lazygit
   tmux new-window -t $SESSION:2 -n lazygit -c "$SCRIPT_DIR"
