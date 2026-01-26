@@ -177,6 +177,8 @@ alias shutdown="sudo shutdown -P now"
 
 alias dots="sh /home/cesar/git/dotfiles-scripts/tmux.sh"
 alias recipes="sh /home/cesar/git/magic-recipes/tmux.sh"
+alias todo-notes="sh /home/cesar/git/todo-notes/tmux.sh"
+alias apps="sh /home/cesar/git/apps-main-repo/tmux.sh"
 
 # fnm
 FNM_PATH="/home/cesar/.local/share/fnm"
