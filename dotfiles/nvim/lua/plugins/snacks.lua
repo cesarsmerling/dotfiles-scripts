@@ -2,6 +2,18 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      picker = {
+        sources = {
+          explorer = {
+            hidden = true,
+            ignored = true,
+          },
+          files = {
+            hidden = true,
+            ignored = true,
+          },
+        },
+      },
       scroll = { enabled = false },
       input = { enabled = true },
       dashboard = {
