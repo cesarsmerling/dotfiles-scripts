@@ -108,23 +108,32 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-# fnm
-FNM_PATH="/home/cesar/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/cesar/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+# # fnm
+# FNM_PATH="/home/cesar/.local/share/fnm"
+# if [ -d "$FNM_PATH" ]; then
+#   export PATH="/home/cesar/.local/share/fnm:$PATH"
+#   eval "`fnm env`"
+# fi
 
 # pnpm
 export PNPM_HOME="/home/cesar/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
 
 # Enable right alt key to be Compose key, for ñ and áéíóú
 # setxkbmap -option compose:ralt
+
+function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+                cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+  }
 
 
 #fzf-git
@@ -179,14 +188,14 @@ alias dots="sh /home/cesar/git/dotfiles-scripts/tmux.sh"
 alias recipes="sh /home/cesar/git/magic-recipes/tmux.sh"
 alias todo-notes="sh /home/cesar/git/todo-notes/tmux.sh"
 alias apps="sh /home/cesar/git/apps-main-repo/tmux.sh"
-
-# fnm
-FNM_PATH="/home/cesar/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
+alias life="sh /home/cesar/git/main-life/tmux.sh"
+alias mlweb="cd /home/cesar/git/apps-main-repo/projects/magic-ledger-ward-front/web"
 
 # Go (Golang) PATH
 export PATH=$PATH:/usr/local/go/bin
+
 export PATH="$HOME/.local/bin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
